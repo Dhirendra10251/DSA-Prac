@@ -1,6 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
-class solution{
+//bruteforce
+class solution1{
 public:
     void shifter(vector<int>& arr){
         vector<int> temp;
@@ -14,6 +15,21 @@ public:
         }
         for(int i = temp.size();i<arr.size();i++){
             arr[i] = 0;
+        }
+        return;
+    }
+};
+
+//optimal
+class solution{
+public:
+    void zeroshifter(vector<int>& num){
+        int j = 0;
+        for (int i = 0; i<num.size();i++){
+            if(num[i]!=0){
+                swap(num[i],num[j]);
+                j++;
+            }
         }
         return;
     }
